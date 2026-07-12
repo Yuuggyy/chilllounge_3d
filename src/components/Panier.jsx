@@ -3,13 +3,13 @@ import { createCommande } from '../lib/supabase';
 
 // ─── Couleurs Chill Lounge ───────────────────────────────────────
 const C = {
-  primary:    '#1A3A2A',
-  primaryMid: '#2D5E42',
-  gold:       '#B8943F',
-  goldLight:  '#D4AF6A',
-  beige:      '#F5EDD8',
-  cream:      '#FBF8F0',
-  dark:       '#1A1A14',
+  primary:    '#1E2530',
+  primaryMid: '#2C3547',
+  gold:       '#C8A96E',
+  goldLight:  '#E0C48A',
+  beige:      '#F2EBD9',
+  cream:      '#FAF7F0',
+  dark:       '#12161E',
   darkSoft:   'rgba(0,0,0,0.52)',
   border:     'rgba(0,188,212,0.20)',
   danger:     '#C0392B',

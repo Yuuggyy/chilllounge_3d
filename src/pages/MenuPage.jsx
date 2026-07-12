@@ -4,15 +4,15 @@ import Book3D, { ProduitCard } from '../components/Book3D';
 import Panier from '../components/Panier';
 
 const C = {
-  primary:    '#0D2B4A',
-  primaryMid: '#1A3F64',
-  gold:       '#00BCD4',
-  goldLight:  '#4DD0E1',
-  beige:      '#E8F4FF',
-  cream:      '#F5FBFF',
-  dark:       '#050F1A',
-  darkSoft:   'rgba(5,15,26,0.55)',
-  border:     'rgba(0,188,212,0.20)',
+  primary:    '#1E2530',
+  primaryMid: '#2C3547',
+  gold:       '#C8A96E',
+  goldLight:  '#E0C48A',
+  beige:      '#F2EBD9',
+  cream:      '#FAF7F0',
+  dark:       '#12161E',
+  darkSoft:   'rgba(18,22,30,0.55)',
+  border:     'rgba(200,169,110,0.20)',
 };
 
 function useIsMobile() {
@@ -116,12 +116,12 @@ export default function MenuPage() {
         padding: isMobile ? '12px 16px' : '14px 32px',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         background: C.primary, gap: 10,
-        boxShadow: '0 2px 16px rgba(13,43,74,0.25)',
+        boxShadow: '0 2px 16px rgba(30,37,48,0.25)',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, minWidth: 0 }}>
           {parametres?.logo_url
             ? <img src={parametres.logo_url} alt="" style={{ width: 40, height: 40, borderRadius: '50%', objectFit: 'cover', border: `2px solid ${C.gold}`, flexShrink: 0 }} />
-            : <div style={{ width: 40, height: 40, borderRadius: '50%', background: `linear-gradient(135deg, ${C.gold}, ${C.goldLight})`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, flexShrink: 0 }}>🌊</div>
+            : <div style={{ width: 40, height: 40, borderRadius: '50%', background: `linear-gradient(135deg, ${C.gold}, ${C.goldLight})`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, flexShrink: 0 }}>🍹</div>
           }
           <div style={{ minWidth: 0 }}>
             <h1 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: isMobile ? 20 : 24, fontWeight: 700, color: C.beige, margin: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
@@ -131,12 +131,12 @@ export default function MenuPage() {
           </div>
         </div>
         <div style={{ display: 'flex', gap: isMobile ? 8 : 12, flexShrink: 0 }}>
-          <button onClick={() => setShowAppel(true)} style={{ background: 'rgba(255,255,255,0.10)', border: `1px solid rgba(0,188,212,0.40)`, color: C.gold, borderRadius: 8, padding: isMobile ? '7px 12px' : '8px 18px', fontSize: 13, fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}>
+          <button onClick={() => setShowAppel(true)} style={{ background: 'rgba(255,255,255,0.10)', border: `1px solid rgba(200,169,110,0.40)`, color: C.gold, borderRadius: 8, padding: isMobile ? '7px 12px' : '8px 18px', fontSize: 13, fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}>
             {isMobile ? '🔔' : '🔔 Appeler le serveur'}
           </button>
           <button onClick={() => setShowPanier(true)} style={{
             background: totalItems > 0 ? `linear-gradient(135deg, ${C.gold}, ${C.goldLight})` : 'rgba(255,255,255,0.10)',
-            border: totalItems > 0 ? 'none' : `1px solid rgba(0,188,212,0.40)`,
+            border: totalItems > 0 ? 'none' : `1px solid rgba(200,169,110,0.40)`,
             color: '#fff', borderRadius: 8, padding: isMobile ? '7px 12px' : '8px 20px',
             fontSize: 13, fontWeight: 700, cursor: 'pointer',
             display: 'flex', alignItems: 'center', gap: 6,
@@ -149,7 +149,7 @@ export default function MenuPage() {
 
       {/* ── RECHERCHE sticky ── */}
       <div style={{ position: 'sticky', top: isMobile ? 64 : 72, zIndex: 99, background: C.primaryMid, padding: isMobile ? '10px 16px' : '10px 32px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: 'rgba(255,255,255,0.10)', border: `1px solid rgba(0,188,212,0.25)`, borderRadius: 10, padding: '9px 14px', maxWidth: isMobile ? '100%' : 520, margin: '0 auto' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: 'rgba(255,255,255,0.10)', border: `1px solid rgba(200,169,110,0.25)`, borderRadius: 10, padding: '9px 14px', maxWidth: isMobile ? '100%' : 520, margin: '0 auto' }}>
           <span style={{ color: C.gold }}>🔎</span>
           <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Rechercher un plat, une catégorie…"
             style={{ flex: 1, border: 'none', background: 'transparent', outline: 'none', fontSize: 14, color: C.beige, fontFamily: 'inherit' }} />
@@ -211,7 +211,7 @@ export default function MenuPage() {
 
       {/* ── MODAL APPEL ── */}
       {showAppel && (
-        <div style={{ position: 'fixed', inset: 0, background: 'rgba(13,43,74,0.50)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: 20 }} onClick={() => setShowAppel(false)}>
+        <div style={{ position: 'fixed', inset: 0, background: 'rgba(30,37,48,0.50)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: 20 }} onClick={() => setShowAppel(false)}>
           <div style={{ background: '#fff', borderRadius: 20, padding: 28, width: '100%', maxWidth: 380 }} onClick={e => e.stopPropagation()}>
             <div style={{ textAlign: 'center', marginBottom: 20 }}>
               <div style={{ width: 60, height: 60, borderRadius: '50%', margin: '0 auto 14px', background: `linear-gradient(135deg, ${C.gold}, ${C.goldLight})`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 26 }}>🔔</div>
@@ -231,7 +231,7 @@ export default function MenuPage() {
       )}
 
       {/* ── TOAST ── */}
-      {toast && <div style={{ position: 'fixed', bottom: 24, left: '50%', transform: 'translateX(-50%)', background: C.primary, color: C.beige, padding: '12px 24px', borderRadius: 12, fontSize: 14, fontWeight: 600, zIndex: 200, border: `1px solid ${C.gold}`, boxShadow: '0 8px 24px rgba(13,43,74,0.25)' }}>{toast}</div>}
+      {toast && <div style={{ position: 'fixed', bottom: 24, left: '50%', transform: 'translateX(-50%)', background: C.primary, color: C.beige, padding: '12px 24px', borderRadius: 12, fontSize: 14, fontWeight: 600, zIndex: 200, border: `1px solid ${C.gold}`, boxShadow: '0 8px 24px rgba(30,37,48,0.25)' }}>{toast}</div>}
     </div>
   );
 }

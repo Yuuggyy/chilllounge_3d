@@ -16,14 +16,14 @@ const STATUT_NEXT   = { recue: 'en_cours', en_cours: 'terminee' };
 
 // ─── Couleurs marque Chill Lounge ───────────────────────────────
 const C = {
-  primary:     '#1A3A2A',
-  primaryMid:  '#2D5E42',
-  primarySoft: 'rgba(13,43,74,0.08)',
-  gold:        '#B8943F',
-  goldLight:   '#D4AF6A',
-  beige:       '#F5EDD8',
-  cream:       '#FBF8F0',
-  dark:        '#1A1A14',
+  primary:     '#1E2530',
+  primaryMid:  '#2C3547',
+  primarySoft: 'rgba(30,37,48,0.08)',
+  gold:        '#C8A96E',
+  goldLight:   '#E0C48A',
+  beige:       '#F2EBD9',
+  cream:       '#FAF7F0',
+  dark:        '#12161E',
   darkSoft:    'rgba(0,0,0,0.52)',
   border:      'rgba(0,188,212,0.25)',
   success:     '#1E8449',
@@ -49,7 +49,7 @@ function LoginForm({ onLogin }) {
   return (
     <div style={{
       minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
-      background: `linear-gradient(160deg, ${C.primary} 0%, #0D2019 50%, #1A1A14 100%)`,
+      background: `linear-gradient(160deg, ${C.primary} 0%, #12161E 50%, #0A0D14 100%)`,
       padding: 20,
     }}>
       <div style={{ width: '100%', maxWidth: 420 }}>

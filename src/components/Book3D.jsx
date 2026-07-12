@@ -1,15 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
 
 const C = {
-  primary:    '#0D2B4A',
-  primaryMid: '#1A3F64',
-  gold:       '#00BCD4',
-  goldLight:  '#4DD0E1',
-  beige:      '#E8F4FF',
-  cream:      '#F5FBFF',
-  dark:       '#050F1A',
-  darkSoft:   'rgba(5,15,26,0.55)',
-  border:     'rgba(0,188,212,0.20)',
+  primary:    '#1E2530',
+  primaryMid: '#2C3547',
+  gold:       '#C8A96E',
+  goldLight:  '#E0C48A',
+  beige:      '#F2EBD9',
+  cream:      '#FAF7F0',
+  dark:       '#12161E',
+  darkSoft:   'rgba(18,22,30,0.55)',
+  border:     'rgba(200,169,110,0.20)',
 };
 
 /* ─── ProduitCard ─────────────────────────────────────────── */
@@ -20,7 +20,7 @@ export function ProduitCard({ produit, onAdd, isMobile }) {
   return (
     <div style={{
       padding: '14px 0',
-      borderBottom: `1px solid rgba(0,188,212,0.12)`,
+      borderBottom: `1px solid rgba(200,169,110,0.12)`,
       display: 'flex', gap: hasImage ? 14 : 0, alignItems: 'flex-start',
     }}>
       {hasImage && (
@@ -36,7 +36,7 @@ export function ProduitCard({ produit, onAdd, isMobile }) {
             overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
             maxWidth: isMobile ? '55vw' : 380,
           }}>{produit.nom}</span>
-          <span style={{ flex: 1, borderBottom: `1.5px dotted rgba(0,188,212,0.30)`, position: 'relative', top: -3, minWidth: 8 }} />
+          <span style={{ flex: 1, borderBottom: `1.5px dotted rgba(200,169,110,0.30)`, position: 'relative', top: -3, minWidth: 8 }} />
           <span style={{ fontSize: 15, fontWeight: 800, color: C.gold, whiteSpace: 'nowrap', flexShrink: 0 }}>
             {Number(produit.prix).toFixed(2)} $
           </span>
@@ -144,11 +144,11 @@ export default function Book3D({ pages, onAdd, isMobile }) {
             cursor: 'pointer', flexShrink: 0, whiteSpace: 'nowrap',
             background: i === current
               ? `linear-gradient(135deg, ${C.gold}, ${C.goldLight})`
-              : `rgba(13,43,74,0.08)`,
+              : `rgba(30,37,48,0.08)`,
             color: i === current ? '#fff' : C.dark,
             fontSize: 13, fontWeight: i === current ? 700 : 400,
             transition: 'all 0.2s',
-            boxShadow: i === current ? `0 2px 10px rgba(0,188,212,0.30)` : 'none',
+            boxShadow: i === current ? `0 2px 10px rgba(200,169,110,0.30)` : 'none',
           }}>
             {p.categorie.emoji && `${p.categorie.emoji} `}{p.categorie.nom}
           </button>
@@ -160,7 +160,7 @@ export default function Book3D({ pages, onAdd, isMobile }) {
         {pages.map((_, i) => (
           <div key={i} onClick={() => setCurrent(i)} style={{
             width: i === current ? 20 : 6, height: 6, borderRadius: 3,
-            background: i === current ? C.gold : `rgba(0,188,212,0.25)`,
+            background: i === current ? C.gold : `rgba(200,169,110,0.25)`,
             transition: 'all 0.25s', cursor: 'pointer',
           }} />
         ))}
@@ -171,7 +171,7 @@ export default function Book3D({ pages, onAdd, isMobile }) {
         background: '#fff',
         borderRadius: 16,
         border: `1px solid ${C.border}`,
-        boxShadow: `0 4px 20px rgba(13,43,74,0.08)`,
+        boxShadow: `0 4px 20px rgba(30,37,48,0.08)`,
         overflow: 'hidden',
       }}>
         {/* Header catégorie */}
